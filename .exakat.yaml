@@ -2,3 +2,5 @@ name: sculpin
 
 ignore_rules:
     - Classes/FossilizedMethod
+    - Classes/EmptyClass
+    - Classes/NonPpp
