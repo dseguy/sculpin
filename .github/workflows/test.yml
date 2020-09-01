@@ -3,12 +3,10 @@
 on: [push, pull_request]
 name: Test
 jobs:
-  phpstan:
-    name: PHPStan
+  exakat:
+    name: Exakat
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: PHPStan
-      uses: docker://oskarstark/phpstan-ga
-      with:
-        args: analyse src/
+    - name: Exakat
+      uses: docker://exakat/exakat-ga
