@@ -10,3 +10,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Exakat
       uses: docker://exakat/exakat-ga
+      with:
+        ignore_rules: 'Php/ShouldUseCoalesce,Functions/UsesDefaultArguments'
+        ignore_dirs: '/src/Sculpin/Contrib'
