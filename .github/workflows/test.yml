@@ -11,5 +11,5 @@ jobs:
     - name: Exakat
       uses: docker://exakat/exakat-ga
       with:
-        ignore_rules: 'Php/ShouldUseCoalesce,Functions/UsesDefaultArguments'
+        ignore_rules: 'Php/ShouldUseCoalesce,Functions/UsesDefaultArguments,Interfaces/UndefinedInterfaces'
         ignore_dirs: '/src/Sculpin/Contrib'
