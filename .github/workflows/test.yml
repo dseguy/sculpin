@@ -13,3 +13,4 @@ jobs:
       with:
         ignore_rules: 'Php/ShouldUseCoalesce,Functions/UsesDefaultArguments,Interfaces/UndefinedInterfaces'
         ignore_dirs: '/src/Sculpin/Contrib'
+        project_rules: "Sarif"
