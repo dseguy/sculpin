@@ -14,3 +14,10 @@ jobs:
         ignore_rules: 'Php/ShouldUseCoalesce,Functions/UsesDefaultArguments,Interfaces/UndefinedInterfaces'
         ignore_dirs: '/src/Sculpin/Contrib'
         project_reports: "Sarif"
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        #Full path : /usr/src/exakat/projects/review/code/exakat.sarif
+        sarif_file: ../../usr/src/exakat/projects/review/code/exakat.sarif
+        
