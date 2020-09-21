@@ -19,5 +19,5 @@ jobs:
       with:
         # Path to SARIF file relative to the root of the repository
         #Full path : /usr/src/exakat/projects/review/code/exakat.sarif
-        sarif_file: ../../usr/src/exakat/projects/review/code/exakat.sarif
+        sarif_file: ../../usr/src/exakat/projects/review/exakat.sarif
         
