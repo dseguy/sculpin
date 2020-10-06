@@ -11,7 +11,7 @@ jobs:
     - name: Exakat
       uses: docker://exakat/exakat-enterprise
       with:
-        project-token: ${{ secrets.EXAKAT_TOKEN }}
+        project_token: ${{ secrets.EXAKAT_TOKEN }}
         output: results.sarif
         format: sarif
     - name: Upload SARIF file
