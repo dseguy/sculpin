@@ -1,12 +1,22 @@
-- 
-  name: "Run Exakat Enterprise"
-  uses: exakat/exakat-enterprise@v1
-  with: 
-    format: sarif
-    output: results.sarif
-    project-token: "${{ secrets.EXAKAT_TOKEN }}"
-- 
-  name: "Upload SARIF results file"
-  uses: github/codeql-action/upload-sarif@v1
-  with: 
-    sarif_file: results.sarif
+# This is a a workflow to run Exakat Enterprise
+
+on: [push, pull_request]
+name: Test
+jobs:
+  exakat:
+    name: Exakat
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Exakat
+      uses: docker://exakat/exakat-enterprise
+      with:
+        project-token: ${{ secrets.EXAKAT_TOKEN }}
+        output: results.sarif
+        format: sarif
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        #Full path : /usr/src/exakat/projects/review/code/exakat.sarif
+        sarif_file: exakat.sarif
