@@ -75,4 +75,7 @@ class ThemeRegistry
             return $theme;
         }
     }
+    
+    function dummy() {}
+
 }
